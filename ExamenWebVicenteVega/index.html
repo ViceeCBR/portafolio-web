@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio CBR</title>
+<link rel="icon" type="image/png" href="./icono.png">
+<style>
+    @import url("https://use.typekit.net/pnw1ket.css");
+
+    @font-face {
+        font-family: "InterLight";
+        src: url("./Font/InterLight.ttf") format("opentype");
+        font-weight: light;
+    }
+    @font-face {
+        font-family: "InterBold";
+        src: url("./Font/InterBold.ttf") format("opentype");
+        font-weight: bold;
+    }
+
+    body{
+        margin: 0;
+        cursor: none;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('./BG/BG2.png');
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        transform: rotate(180deg); 
+        z-index: -1; 
+    }
+
+    .contenido{
+        height: 1000vh;
+        color: white;
+    }
+
+    .PortafolioTitulo{
+        width: 25%;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .PortafolioTitulo img{
+        transition: transform 0.17s ease;
+    }
+
+    .PortafolioTitulo img:hover{
+        transform: scale(1.04);
+    }
+
+    .SuperiorPortafolio{
+        top: 0;
+        margin-top: 0;
+        width: 100%;
+        height: 5.5%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+    .SuperiorPortafolio img{
+        height: 65%;
+        width: 100%;
+    }
+
+    .SeparadorPortafolio{
+        width: 100%;
+        height: 5%;
+    }
+    .SeparadorPortafolio2{
+        width: 100%;
+        height: 0.5%;
+    }
+    .SeparadorPortafolio3{
+        width: 100%;
+        height: 0.5%;
+    }
+    .SeparadorPortafolio4{
+        width: 100%;
+        height: 0.5%;
+    }
+    .QuienSoy{
+        margin-top: 0;
+        width: 100%;
+        height: 12%;
+        position: relative;
+    }
+
+    .QuienSoy img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .ContenidoTitulo{
+        position: absolute;
+        top: 23%;              
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        font-size: clamp(2rem, 4vw, 4rem);  
+        color: white;
+        font-family: "futura-pt-bold", sans-serif;
+        text-align: center;
+    }
+
+    .ContenidoInfo{
+        position: absolute;
+        top: 30%;              
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;            
+        z-index: 2;
+        font-size: clamp(1rem, 1.6vw, 2rem);
+        color: white;
+        text-align: center;
+        font-family: InterLight;
+    }
+
+    .ContenidoInfo span{
+        color: rgb(255, 255, 255);      
+        font-size: clamp(1rem, 1.6vw, 2rem);
+        font-family: InterBold;
+    }
+
+    .Afiche{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .Afiche img{
+        max-width: 90%;   
+        height: auto;
+        transition: transform 0.17s ease;
+    }
+
+    .Afiche img:hover{
+        transform: scale(1.04);
+    }
+
+    .RecAfiche{
+        margin-top: 2%;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 23.8% 21.8% 23.8%;
+        gap: 1.7%;
+    }
+
+    .RecAfiche div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .RecAfiche img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0px 5px 8px rgba(0,0,0,0.35);
+        transition: transform 0.17s ease;
+    }
+
+    .RecAfiche img:hover{
+        transform: scale(1.1);
+    }
+
+    #cursorImage {
+        position: fixed;
+        width: 35px;            
+        height: 35px;
+        background-image: url('./Elementos/Cursor.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+
+    .PapelCentro{
+        margin-top: 5%;
+        width: 100%;
+        height: 8%;
+        position: relative;
+    }
+
+    .PapelCentro .img1{
+        position: absolute;
+        top: 90;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .PapelCentro .img2{
+        position: absolute;
+        height: 28%;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.17s;
+    }
+
+    .PapelCentro .img2:hover{
+        transform: translate(-50%, -50%) scale(1.045);
+    }
+
+
+    .Revistas{
+        margin-top: 5%;
+        width: 100%;
+        height: 8%;
+        position: relative;
+    }
+
+    .Revistas .img1{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        height: 62%;
+        width: auto;
+        transform: translate(-50%, -50%);
+        
+
+    }
+
+    .Contactos{
+        margin-top: 5%;
+        width: 100%;
+        height: 8%;
+        position: relative;
+    }
+
+    .Contactos .img1{
+        position: absolute;
+        top: 90;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .Contactos .img2{
+        position: absolute;
+        height: 35%;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.17s;
+    }
+
+    .AfichesPublicidad {
+        width: 80%;
+        margin: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1.4257fr;  
+        gap: 0.8%;
+    }
+
+    .AfichesPublicidad img {
+        width: 100%;       
+        height: auto;       
+        object-fit: fill;
+        border-radius: 15px; 
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+        transition: transform 0.17s;
+    }
+
+    .AfichesPublicidad img:hover{
+        transform: scale(1.02);
+    }
+
+
+    .RevistasMockup {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+        gap: 0.8%;
+    }
+
+    .RevistasMockup img {
+        width: 100%;       
+        height: auto;       
+        object-fit: fill;
+
+    }
+    .AfichesPublicidad2 {
+        width: 80%;
+        margin: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1.4257fr;  
+        gap: 0.8%;
+        position: relative;
+        margin-top: -8%;
+    }
+
+    .AfichesPublicidad2 img {
+        width: 182%;       
+        height: auto;       
+        object-fit: fill;
+        border-radius: 15px; 
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+        transition: transform 0.17s;
+    }
+
+    .AfichesPublicidad2 .img2 {
+        width: 42.5%;       
+        height: auto;      
+        left: 58%; 
+        object-fit: fill;
+        border-radius: 15px; 
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+        transition: transform 0.17s;
+        position: relative;
+    }
+
+    .AfichesPublicidad2 img:hover{
+        transform: scale(1.02);
+    }
+
+    /* Modal */
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.25);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modal-content {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.3);
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 15px;
+        width: 80%;
+        max-width: 760px;
+        text-align: left;
+        color: white;
+        position: relative;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+        transform: translateY(0);
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .modal-img {
+        width: 45%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .modal-desc {
+        width: 50%;
+        font-family: InterLight;
+    }
+
+    .modal-desc h2 {
+        margin-top: 0;
+        font-family: InterBold;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: none;
+    }
+
+    .close:hover {
+        color: #f00;
+    }
+    .MenuContactos{
+        height: 100%;
+        width:100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        margin-top: -10%;
+        cursor: none;
+}
+
+    .MenuContactosInt{
+        background-color: none;
+        border-radius: 20px;
+        width: 95%;
+        height: 25%;
+        margin-top: -10%;
+        display: flex;              
+        justify-content: center;    
+        align-items: center;   
+        cursor: none;     
+}
+
+    .Botones{
+        height: 100%;               
+        width: 100%;
+        display: flex;
+        justify-content: center;    
+        align-items: center;       
+        gap: 10px;
+        cursor: none;
+}
+
+    .Botones a{
+        width: 100%;
+        height: 65%;
+        text-decoration: none;
+        display: flex;
+        cursor: none;
+}
+
+    .MenuContactosInt button{
+        background: black;
+        opacity: 80%;
+        color: white;
+        border: 1px none rgb(68, 68, 68);
+        border-width: 2.5px;
+        border-radius: 20px;
+        width: 100%;
+        height: 35%;
+        transition: 0.2s ease;
+        font-family: InterLight;
+        font-weight: bold;
+        font-size: large;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+        cursor: none;
+}
+
+    .MenuContactosInt button:hover{
+        background: rgba(255, 255, 255, 0.15);
+        color: black;
+        border-color: black;
+        border-width: 2.5px;
+        border: solid;
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+    .MenuContactosInt button:active{
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(0.98);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+     @media screen and (max-width: 1100px) {
+            .PortafolioTitulo{
+                width: 50%;
+                margin-top: -2%;
+            }
+            .SuperiorPortafolio img{
+                height: 100%;
+                transition: transform 0.17s ease;
+            }
+            .ContenidoTitulo{
+                width: 80%;
+                height: 80%;
+                margin-top: -15%;
+            }
+            .ContenidoInfo{
+                width: 100%;
+                height: 100%;
+                margin-top: -18%;
+            }
+            .QuienSoy img{
+                width: 100%;
+                height: 60%;
+            }
+            .Revistas{
+                width: auto;
+                height: 5%;
+            }
+            .MenuContactos{
+                margin-top: -30%;
+            }
+            .MenuContactosInt button{
+                font-size: large;
+                margin-top: -25%;
+            }
+            
+        }
+</style>
+</head>
+<body>
+<div class="contenido">
+
+    <div class="SuperiorPortafolio">
+        <div class="PortafolioTitulo">
+            <img src="./Elementos/Porta.png" >
+        </div>
+        <div><img src="./Elementos/Papel Portafolio.png"></div>
+    </div>
+
+    <div class="SeparadorPortafolio"></div>
+
+    <div class="QuienSoy">
+        <div class="ContenidoTitulo">¿QUIEN SOY?</div>
+        <div class="ContenidoInfo">
+<p>Hola!, mi nombre es <span>Vicente Vega</span>, aunque muchos me conocen como <span>CBR.</span> <br>
+Soy estudiante de segundo año de Diseño Gráfico y me apasiona <br> 
+la cultura hip-hop, con la que me siento profundamente identificado. <br>
+Mi conexión con el graffiti y los tags influye mucho en mi forma de ver y crear diseños. <br>
+Mi trabajo se enfoca principalmente en la creación de <span>flyers</span>, <br>
+<span>pósters</span> y <span>publicidad visual (KV Visual)</span>. <br>
+También disfruto diseñando portadas editoriales, covers de álbumes o CD, donde puedo <br>
+fusionar mi estilo urbano con propuestas gráficas sólidas, creativas y llenas de personalidad. <br>
+Aun así, me considero una persona versátil y capaz de adaptarme a distintos estilos y <br>
+necesidades visuales, explorando nuevas formas de expresión dentro del diseño.</p>
+        </div>
+        <img src="./Elementos/PapelMedio3.png">
+    </div>
+
+    <div class="Afiche">
+        <div> <img src="./Elementos/Afiches2.png"></div>
+    </div>
+
+    <div class="RecAfiche">
+        <div class="Afiche1">
+            <img src="./Elementos/AficheJHL.png">
+        </div>
+
+        <div class="Afiche2">
+            <img src="./Elementos/AficheMDLM.png" alt="Afiche2_" id="afiche2">
+        </div>
+
+        <div class="Afiche3">
+            <img src="./Elementos/AficheJHL2.png">
+        </div>
+    </div>
+
+    <div class="PapelCentro">
+        <img src="./Elementos/PapelMedio2.png" class="img1">
+        <img src="./Elementos/Publicidad.png" class="img2">
+    </div>
+
+    <!-- KV Andina del valle -->
+    <div class="AfichesPublicidad">
+        <div>
+            <img src="./Elementos/AndinaCuadrado.jpg" class="img1" id="andina1">
+        </div>
+        <div>
+            <img src="./Elementos/AndinaLargo.jpg" class="img2" id="andina2">
+        </div>
+    </div>
+
+    <!-- KV Pepsi -->
+    <div class="AfichesPublicidad2">
+        <div>
+            <img src="./Elementos/KVPepsiLargo.png" class="img" id="pepsi1">
+        </div>
+        <div>
+            <img src="./Elementos/KVPepsiCuadrado.png" class="img2" id="pepsi2">
+         </div>
+    </div>
+
+    <div class="SeparadorPortafolio2"></div>
+        <div class="PapelCentro">
+        <img src="./Elementos/PapelMedio2.png" class="img1">
+        <img src="./Elementos/Editorial2.png" class="img2">
+    </div>
+    <div class="SeparadorPortafolio3"></div>
+        <div class="Revistas">
+        <img src="./Elementos/Revistas1.png" class="img1">
+        <!-- <img src="./Elementos/Editorial2.png" class="img2"> -->
+    </div>
+
+    <div class="RevistasMockup">
+        <div>
+            <img src="./Elementos/MockUpRevistaPepsi.jpg.png" class="img1" id="andina1">
+        </div>
+        <div>
+            <img src="./Elementos/MockUpRevistaHipHop.jpg.png" class="img2" id="andina2">
+        </div>
+    </div>
+        <div class="Contactos">
+        <img src="./Elementos/PapelMedio2.png" class="img1">
+        <img src="./Elementos/Contacto.png" class="img2">
+    </div>
+    <div class="MenuContactos">
+<div class="MenuContactosInt">
+    <div class="Botones">
+        <a href="https://www.instagram.com/viceecbr" target="_blank"><button>Instagram</button></a>
+        <a href="https://wa.me/56956138374" target="_blank"><button>WhatsApp</button></a>
+        <a href="mailto:vivega2006@gmail.com"><button>Mail</button></a>
+    </div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div id="modalAfiche1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/AficheJHL.png" alt="Afiche1_" class="modal-img">
+        <div class="modal-desc">
+            <h2>Afiche Jark-Hop Legacy</h2>
+            <p>Este afiche fue diseñado para un evento ficticio de Hip Hop, 
+                mostrando de manera visual todas las actividades que se realizarán, 
+                el objetivo del diseño es promocionar el evento de forma atractiva, 
+                utilizando elementos gráficos que representen la energía, 
+                la dinámica y el estilo característico de la cultura Hip Hop.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalAfiche2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/AficheMDLM.png" alt="Afiche2_" class="modal-img">
+        <div class="modal-desc">
+            <h2>Afiche Museo de la Memoria</h2>
+            <p>
+                Este afiche fue diseñado como parte de un proyecto cuyo propósito principal era generar
+                 un impacto visual y emocional en el espectador. La intención era promover la conciencia sobre la importancia
+                 de la memoria histórica e invitar de manera directa y reflexiva a visitar el Museo de la Memoria, 
+                 resaltando su valor como espacio de aprendizaje y reflexión.
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalAfiche3" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/AficheJHL2.png" alt="Afiche3_" class="modal-img">
+        <div class="modal-desc">
+            <h2>Afiche Line Up Jark-Hop Legacy</h2>
+            <p>
+                Este afiche fue diseñado para un evento ficticio de Hip Hop, 
+                presentando de forma visual el line up de artistas, DJs confirmados y la hora del encuentro. 
+                El objetivo del diseño es promocionar el evento de manera atractiva, 
+                utilizando elementos gráficos que transmitan la energía, la dinámica y 
+                el estilo característico de la cultura Hip Hop, logrando así captar la atención del público e invitarlo a participar.
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalAndina1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/AndinaCuadrado.jpg" class="modal-img">
+        <div class="modal-desc">
+            <h2>KV Andina Original</h2>
+            <p>En este proyecto se realizó la fotografía de una botella de Andina, 
+                la cual fue posteriormente retocada y ajustada para mejorar su presencia visual. 
+                Se integró de manera coherente con el fondo y con los demás elementos de la composición, 
+                se trabajó en la corrección de sombras y luces para lograr un acabado más realista y atractivo. 
+                Finalmente, se añadieron elementos gráficos que complementan la propuesta visual y
+                 refuerzan la identidad del diseño.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalAndina2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/AndinaLargo.jpg" class="modal-img">
+        <div class="modal-desc">
+            <h2>KV Andina Adaptado</h2>
+            <p>Para este proyecto se fotografió una botella de Andina y luego se realizó un trabajo 
+                de retoque para potenciar su apariencia. La imagen fue integrada cuidadosamente con el fondo y 
+                los demás elementos visuales, ajustando luces y sombras para obtener un resultado más equilibrado y natural.
+                Además, la composición se reorganizó para adaptarla a un formato horizontal, garantizando una mejor lectura visual, 
+                se incorporaron elementos gráficos que complementan la propuesta y fortalecen la identidad del diseño.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalPepsi1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/KVPepsiLargo.png" class="modal-img">
+        <div class="modal-desc">
+            <h2>KV Pepsi Adaptado</h2>
+            <p>En este proyecto se capturó la imagen de una botella de Pepsi y 
+                se trabajó en su retoque para mejorar su presencia visual. 
+                Se realizaron correcciones de color y ajustes de iluminación para lograr un resultado más armónico. 
+                La botella fue incorporada dentro de la composición junto a otros elementos gráficos 
+                que aportan coherencia estética. Además, el diseño final se reorganizó para adaptarse correctamente 
+                a un formato horizontal.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalPepsi2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+        <img src="./Elementos/KVPepsiCuadrado.png" class="modal-img">
+        <div class="modal-desc">
+            <h2>KV Pepsi Original</h2>
+            <p>En este proyecto se realizó la fotografía de una botella de Pepsi, 
+                la cual fue retocada para mejorar su apariencia. Posteriormente se ajustaron colores,
+                 luces y contrastes para lograr una imagen más equilibrada. 
+                 La botella fue integrada en la composición junto a otros elementos visuales, 
+                 y se añadieron gráficos que reforzaran la estética general y complementaran el estilo propuesto.</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="cursorImage"></div>
+
+<script>
+// Cursor
+document.addEventListener("mousemove", (e) => {
+    const cursor = document.getElementById("cursorImage");
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+});
+
+// Modal
+const modales = [
+  {img: ".Afiche1 img", modal: "#modalAfiche1"},
+  {img: "#afiche2", modal: "#modalAfiche2"},
+  {img: ".Afiche3 img", modal: "#modalAfiche3"},
+
+  {img: "#andina1", modal: "#modalAndina1"},
+  {img: "#andina2", modal: "#modalAndina2"},
+  {img: "#pepsi1", modal: "#modalPepsi1"},
+  {img: "#pepsi2", modal: "#modalPepsi2"}
+];
+
+modales.forEach(item => {
+  const imagen = document.querySelector(item.img);
+  const modal = document.querySelector(item.modal);
+  const closeBtn = modal.querySelector(".close");
+
+  imagen.onclick = () => modal.classList.add("show");
+  closeBtn.onclick = () => modal.classList.remove("show");
+
+  window.addEventListener("click", e => {
+    if(e.target === modal) modal.classList.remove("show");
+  });
+});
+</script>
+
+</body>
+</html>
